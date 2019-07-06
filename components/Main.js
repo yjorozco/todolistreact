@@ -9,16 +9,20 @@ import { updateList } from '../redux/actions/actions'
 
 const styles = StyleSheet.create({
     header:{
-        height: '10%'
+        height: '10%',
+        justifyContent: 'flex-start'
     },
     text:{
-        height: '10%'
+        height: '10%',
+        justifyContent: 'flex-start'
     },
     list:{
-        height:'70%'
+        height:'70%',
+        justifyContent: 'center'
     },
     footer: {
-        height:'10%'
+        height:'10%',
+        justifyContent: 'flex-end'
     }
 })
 
@@ -57,10 +61,10 @@ class  Main extends React.Component {
         return (    
             
             <View>
-            <Header style={styles.header}/>       
-            <TextList sytle={styles.text} onSubmitEditing = {this.onSubmitEditing}  />
-            <List style={styles.list} items = {this.props.items}/>
-            <Footer style={styles.footer}/>
+                <View style={styles.header}><Header /></View>
+                <View sytle={styles.text}><TextList onSubmitEditing = {this.onSubmitEditing}  /></View>
+                <View style={styles.list}><List items = {this.props.items}/></View>
+                <View style={styles.footer}><Footer /></View>
             </View>
         )
     }
